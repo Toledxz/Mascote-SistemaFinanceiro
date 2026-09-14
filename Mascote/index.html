@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0B1F3A" />
+  <title>UrContab • Mascote Interativo</title>
+  <link rel="stylesheet" href="styles.css" /><link rel="stylesheet" href="animation.css" /><link rel="stylesheet" href="chat.css" />
+</head>
+<body>
+  <div class="ambient ambient--one"></div>
+  <div class="ambient ambient--two"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="UrContab">
+      <span class="brand__mark"><img class="brand-logo brand-logo--light" src="assets/urcontab-logo.png" alt="UrContab"/><img class="brand-logo brand-logo--dark" src="assets/urcontab-logo-dark.png" alt=""/></span>
+      <span>UrContab</span>
+    </a>
+
+    <button class="icon-button" id="themeToggle" aria-label="Alternar tema" title="Alternar tema"><span aria-hidden="true">◐</span></button>
+  </header>
+
+  <main class="hero">
+    <section class="hero__content">
+      <span class="eyebrow">
+        <i></i>
+        Assistente financeiro UrContab
+      </span>
+
+      <h1>
+        Finanças sob controle.
+        <span>Agora com personalidade.</span>
+      </h1>
+
+      <p class="intro">
+        Conheça a coruja que dá vida à UrContab:
+        ela acena, pisca, movimenta a cabeça, consulta o tablet, celebra metas e
+        muda seu comportamento conforme a interação do usuário.
+      </p>
+
+      <div class="actions">
+        <button class="button button--primary" id="celebrateBtn">
+          
+          Celebrar uma meta
+        </button>
+
+        <button class="button button--secondary" id="tipBtn">
+          
+          Pedir uma dica
+        </button>
+      </div>
+
+      <div class="gesture-controls" role="group" aria-label="Gestos do mascote"><button class="gesture-button" data-gesture="wave">Acenar</button><button class="gesture-button" data-gesture="think">Pensar</button><button class="gesture-button" data-gesture="tablet">Consultar tablet</button><button class="gesture-button" data-gesture="wink">Piscar</button><button class="gesture-button" id="motionToggle" aria-pressed="false">Pausar movimentos</button></div><div class="status-grid">
+        <article class="status-card">
+          <span class="status-card__label">Fluxo</span>
+          <strong>Organizado</strong>
+          <small>Receitas e despesas</small>
+        </article>
+
+        <article class="status-card">
+          <span class="status-card__label">Metas</span>
+          <strong>+12,8%</strong>
+          <small>Progresso do mês</small>
+        </article>
+
+        <article class="status-card">
+          <span class="status-card__label">Sistema</span>
+          <strong>Online</strong>
+          <small>Modo de definição</small>
+        </article>
+      </div>
+    </section>
+
+    <section class="mascot-zone" id="mascotZone" aria-label="Mascote interativo da UrContab">
+      <div class="orbit orbit--outer" aria-hidden="true">
+        <span class="orbit__node orbit__node--a"></span>
+        <span class="orbit__node orbit__node--b"></span>
+        <span class="orbit__node orbit__node--c"></span>
+      </div>
+
+      <div class="orbit orbit--inner" aria-hidden="true"></div>
+
+      <div class="mini-chart" id="miniChart" aria-hidden="true">
+        <span style="--h: 36%; --d: .05s"></span>
+        <span style="--h: 58%; --d: .18s"></span>
+        <span style="--h: 82%; --d: .31s"></span>
+        <span style="--h: 100%; --d: .44s"></span>
+      </div>
+
+      <div class="speech" id="speech" role="status" aria-live="polite">
+        
+        <span id="speechText">Tudo sob controle por aqui.</span>
+      </div>
+
+      <button class="mascot" id="mascot" type="button" aria-label="Interagir com o mascote">
+        <span class="mascot__glow" aria-hidden="true"></span>
+
+        <span class="mascot__visual"><svg class="mascot-rig" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1254 1254" fill="none">
+  <!-- Rig vetorial: cada recorte reutiliza a imagem de referência sem redesenhar a marca. -->
+  <defs>
+    <image id="art" href="assets/mascote.png" width="1254" height="1254"/>
+    <linearGradient id="feathers" x1="350" y1="600" x2="570" y2="1000" gradientUnits="userSpaceOnUse"><stop stop-color="#18496e"/><stop offset=".55" stop-color="#0a2844"/><stop offset="1" stop-color="#2d6794"/></linearGradient>
+    <linearGradient id="lid" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#b1c6dd"/><stop offset="1" stop-color="#eef2f6"/></linearGradient>
+    <clipPath id="bodyClip"><path d="M398 554 Q534 553 650 584 Q732 562 775 589 Q839 631 850 704 L873 931 Q846 1034 777 1029 L798 980 L750 993 Q721 1082 683 1115 Q701 1110 726 1121 Q785 1117 797 1173 L757 1175 Q735 1193 703 1174 L598 1159 Q608 1131 635 1123 L620 1072 Q566 1129 525 1140 Q545 1163 536 1185 L516 1186 Q500 1177 488 1183 Q472 1195 453 1182 L414 1188 Q395 1174 407 1147 L374 1145 L427 1080 L391 1028 L341 782 Z"/></clipPath>
+    <clipPath id="wingClip"><path d="M397 559 C450 563 482 584 489 639 C511 710 508 795 479 868 C449 952 405 1043 349 1120 C314 1094 287 1053 270 1002 C246 947 235 888 239 828 C230 731 280 627 343 585 Q370 567 397 559Z"/></clipPath>
+    <clipPath id="tabletClip"><path d="M885 625 L1064 617 Q1085 621 1085 641 L1017 764 Q1047 788 1034 824 L1023 877 Q1005 894 988 895 Q985 935 955 954 L935 929 Q916 979 877 1005 L889 963 Q858 1006 814 1001 L840 942 L759 924 Q719 927 729 888 L864 645 Q871 633 885 625Z"/></clipPath>
+    <clipPath id="headClip"><path d="M374 143 C407 192 460 207 510 216 C631 170 706 200 764 260 C813 249 853 231 874 183 C896 250 884 296 839 318 C876 389 881 457 850 519 C833 552 802 581 756 589 C717 589 678 605 650 618 C591 587 533 582 475 575 L396 555 Q366 529 361 496 L358 537 Q333 516 331 467 C321 394 358 315 418 274 C374 255 364 201 374 143Z"/></clipPath>
+    <clipPath id="eyeL"><path d="M470 350 Q533 327 574 369 Q601 414 582 458 Q557 482 514 469 Q464 455 465 410 Q465 375 480 365Z"/></clipPath>
+    <clipPath id="eyeR"><path d="M719 383 Q761 365 800 393 Q791 402 797 430 Q796 482 753 496 Q715 502 697 472 Q697 418 719 383Z"/></clipPath>
+    <clipPath id="beakClip"><path d="M605 482 Q628 469 646 448 Q661 436 671 444 Q696 475 679 515 L650 551 Q624 526 605 482Z"/></clipPath>
+  </defs>
+  <g class="rig-body">
+    <use href="#art" clip-path="url(#bodyClip)"/>
+    <path d="M414 585 C351 618 331 784 361 926 L424 1036 Q471 942 496 827 Q514 675 457 604Z" fill="url(#feathers)"/>
+    <g class="rig-tablet"><use href="#art" clip-path="url(#tabletClip)"/></g>
+    <g class="rig-wing"><use href="#art" clip-path="url(#wingClip)"/></g>
+    <g class="rig-head-track"><g class="rig-head">
+      <use href="#art" clip-path="url(#headClip)"/>
+      <g clip-path="url(#eyeL)"><path d="M458 335H603V485H458Z" fill="url(#lid)"/><g class="rig-eye rig-eye--left"><g class="rig-gaze"><use href="#art" clip-path="url(#eyeL)"/></g></g><path class="lid-line" d="M473 416 Q529 448 583 420" stroke="#163b5a" stroke-width="6" stroke-linecap="round"/></g>
+      <g clip-path="url(#eyeR)"><path d="M688 365H810V508H688Z" fill="url(#lid)"/><g class="rig-eye rig-eye--right"><g class="rig-gaze"><use href="#art" clip-path="url(#eyeR)"/></g></g><path class="lid-line" d="M703 444 Q749 471 794 441" stroke="#163b5a" stroke-width="6" stroke-linecap="round"/></g>
+      <g class="rig-beak"><use href="#art" clip-path="url(#beakClip)"/></g>
+    </g></g>
+  </g>
+</svg>
+</span></button>
+
+      <div class="live-pill" id="livePill">
+        <span></span>
+        UrContab ativo
+      </div>
+
+      <div class="hint">Clique para receber um aceno • experimente os gestos</div>
+    </section>
+  </main>
+
+  <canvas id="confettiCanvas" aria-hidden="true"></canvas>
+  <button class="chat-launcher" id="chatLauncher" aria-label="Abrir conversa com a assistente UrContab" aria-expanded="false"><img src="assets/mascote.png" alt=""/><span class="chat-launcher__badge" aria-hidden="true"></span></button>
+  <section class="chat-panel" id="chatPanel" aria-label="Conversa com a assistente UrContab" aria-hidden="true">
+    <header class="chat-header"><img class="chat-avatar" src="assets/mascote.png" alt=""/><div class="chat-header__copy"><div class="chat-header__title">Assistente UrContab</div></div><button class="chat-close" id="chatClose" aria-label="Fechar conversa">×</button></header>
+    <div class="chat-messages" id="chatMessages"><div class="chat-bubble">Olá! Eu sou a assistente da UrContab. Posso ajudar com metas, fluxo de caixa e organização financeira.<span class="chat-time">Agora</span></div></div>
+    <form class="chat-compose" id="chatForm"><input id="chatInput" autocomplete="off" placeholder="Digite sua mensagem..." aria-label="Mensagem para a assistente"/><button class="chat-send" aria-label="Enviar mensagem">Enviar</button></form>
+  </section>
+
+  <script src="motion.js"></script><script src="chat.js"></script>
+</body>
+</html>
+
+
+
+
+
+

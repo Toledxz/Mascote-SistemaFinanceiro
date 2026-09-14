@@ -1,0 +1,69 @@
+/* Articulações em coordenadas da referência (1254 × 1254). */
+.mascot__visual { overflow: visible; border-radius: 0; transform: none; }
+.mascot-rig { display: block; width: 100%; height: auto; overflow: visible; }
+.mascot { width: min(570px, 100%); animation: none; }
+.brand__mark{width:60px;height:60px;display:block;padding:2px;border-radius:12px;overflow:hidden;background:transparent;box-shadow:none}.brand > span:last-child{display:none}.brand-logo{display:block;width:100%;height:100%;object-fit:contain}.brand-logo--dark{display:none}body.dark .brand-logo--light{display:none}body.dark .brand-logo--dark{display:block}
+.intro{text-align:justify;text-justify:inter-word}
+.rig-body { transform-origin: 630px 1160px; animation: breathe 4.5s ease-in-out infinite; }
+.rig-wing { transform-origin: 425px 620px; animation: wingRest 5s ease-in-out infinite; }
+.rig-tablet { transform-origin: 794px 797px; animation: tabletRest 5s ease-in-out infinite; }
+.rig-head, .rig-head-track { transform-origin: 637px 570px; }
+.rig-head { animation: headRest 6s ease-in-out infinite; }
+.rig-head-track { transform: rotate(var(--look, 0deg)); transition: transform .3s ease-out; }
+.rig-eye--left { transform-origin: 530px 412px; }
+.rig-eye--right { transform-origin: 749px 443px; }
+.rig-gaze { transform:translate(var(--gaze-x,0px),var(--gaze-y,0px)); transition:transform .18s ease-out; }
+.mascot[data-gesture="tablet"] .rig-gaze { animation: gazeTablet 2.8s ease-in-out both; }
+.mascot[data-gesture="think"] .rig-gaze { animation: gazeThink 2.8s ease-in-out both; }
+.mascot[data-gesture="wave"] .rig-gaze, .mascot[data-gesture="celebrate"] .rig-gaze { animation: gazeFront 2.8s ease-in-out both; }
+@keyframes gazeTablet { 0%,100%{transform:translate(var(--gaze-x,0px),var(--gaze-y,0px))} 22%,78%{transform:translate(17px,20px)} }
+@keyframes gazeThink { 0%,100%{transform:translate(var(--gaze-x,0px),var(--gaze-y,0px))} 22%,78%{transform:translate(-12px,-12px)} }
+@keyframes gazeFront { 0%,100%{transform:translate(var(--gaze-x,0px),var(--gaze-y,0px))} 22%,78%{transform:translate(0,0)} }
+.lid-line { opacity: 0; }
+.rig-beak { transform-origin: 653px 466px; }
+.mascot.is-blinking .rig-eye { animation: eyeClose .24s ease-in-out; }
+.mascot.is-blinking .lid-line { animation: lash .24s ease-in-out; }
+.mascot[data-gesture="wink"] .rig-eye--right { animation: eyeClose .65s ease-in-out 2; }
+.mascot[data-gesture="wave"] .rig-wing { animation: wave 2.4s ease-in-out both; }
+.mascot[data-gesture="wave"] .rig-head { animation: greet 2.4s ease-in-out both; }
+.mascot[data-gesture="think"] .rig-head { animation: think 2.8s ease-in-out both; }
+.mascot[data-gesture="think"] .rig-wing { animation: ponder 2.8s ease-in-out both; }
+.mascot[data-gesture="tablet"] .rig-tablet { animation: showTablet 2.8s ease-in-out both; }
+.mascot[data-gesture="tablet"] .rig-head { animation: readTablet 2.8s ease-in-out both; }
+.mascot[data-gesture="talk"] .rig-head { animation: nod .6s ease-in-out 4; }
+.mascot[data-gesture="talk"] .rig-beak { animation: speak .3s ease-in-out 8; }
+.mascot[data-gesture="celebrate"] .rig-body { animation: jump .75s ease-in-out 3; }
+.mascot[data-gesture="celebrate"] .rig-wing { animation: wave 2.4s ease-in-out both; }
+.mascot[data-gesture="celebrate"] .rig-tablet { animation: showTablet 2.4s ease-in-out both; }
+.gesture-controls { display:flex; flex-wrap:wrap; gap:8px; margin-top:18px; }
+.gesture-button { color:var(--text); background:var(--panel); border:1px solid var(--line); border-radius:999px; padding:10px 14px; cursor:pointer; font-size:12px; font-weight:650; min-height:40px; }
+.gesture-button:hover, .gesture-button[aria-pressed="true"] { background:var(--mist); color:var(--navy); border-color:var(--serenity); }
+button:focus-visible, a:focus-visible { outline:3px solid var(--gold); outline-offset:5px; }
+.demo-note { color:var(--muted); font-size:11px; margin:22px 0 -20px; }
+.speech { top:22px; right:10px; }
+.mini-chart { left:0; bottom:75px; }
+.orbit--outer { width:94%; height:auto; aspect-ratio:1; }
+.orbit--inner { width:82%; height:auto; aspect-ratio:1; }
+.mascot-zone { min-width:0; }
+body.motion-paused *, body.motion-paused *::before, body.motion-paused *::after { animation:none!important; transition:none!important; }
+body.motion-paused .rig-head-track { transform:none; }
+body.motion-paused .rig-gaze { transform:none; }
+@keyframes breathe { 0%,100%{transform:scale(1,1)} 50%{transform:scale(1.007,1.012)} }
+@keyframes wingRest { 0%,100%{transform:rotate(0)} 50%{transform:rotate(2deg)} }
+@keyframes tabletRest { 0%,100%{transform:rotate(0)} 50%{transform:rotate(-1.5deg) translateY(-3px)} }
+@keyframes headRest { 0%,35%,100%{transform:rotate(0)} 65%,80%{transform:rotate(-2deg) translateY(-3px)} }
+@keyframes wave { 0%,100%{transform:rotate(0)} 20%{transform:rotate(100deg)} 35%{transform:rotate(78deg)} 50%{transform:rotate(108deg)} 65%{transform:rotate(80deg)} 80%{transform:rotate(101deg)} }
+@keyframes greet { 0%,100%{transform:rotate(0)} 25%,75%{transform:rotate(-5deg)} }
+@keyframes think { 0%,100%{transform:rotate(0)} 25%,75%{transform:rotate(9deg) translateY(2px)} }
+@keyframes ponder { 0%,100%{transform:rotate(0)} 25%,75%{transform:rotate(15deg)} }
+@keyframes showTablet { 0%,100%{transform:rotate(0)} 25%,75%{transform:translate(-9px,-28px) rotate(-8deg)} }
+@keyframes readTablet { 0%,100%{transform:rotate(0)} 25%,75%{transform:translate(8px,12px) rotate(7deg)} }
+@keyframes eyeClose { 0%,100%{transform:scaleY(1)} 45%,60%{transform:scaleY(.025)} }
+@keyframes lash { 0%,25%,85%,100%{opacity:0} 45%,60%{opacity:1} }
+@keyframes nod { 0%,100%{transform:rotate(0)} 50%{transform:translateY(7px) rotate(2deg)} }
+@keyframes speak { 0%,100%{transform:scaleY(1)} 50%{transform:scaleY(.94)} }
+@keyframes jump { 0%,100%{transform:translateY(0)} 15%{transform:scale(1.02,.97)} 50%{transform:translateY(-35px) rotate(-2deg)} 80%{transform:scale(1.01,.99)} }
+@media(max-width:940px) { .gesture-controls{justify-content:center} .mascot-zone{width:min(570px,100%);margin:auto;min-height:640px} }
+@media(max-width:600px) { .mascot-zone{min-height:470px} .mascot{width:86%} .speech{top:0;right:0;max-width:200px} .mini-chart{width:70px;height:70px;bottom:75px;padding:10px} .live-pill{bottom:20px} .hero{gap:35px} }
+.hint{left:50%;right:auto;transform:translateX(-50%);text-align:center;white-space:nowrap}
+@media(prefers-reduced-motion:reduce) { .rig-head-track{transform:none} }
